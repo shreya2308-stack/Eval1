@@ -1,0 +1,44 @@
+class Node:
+    def __init__(self,datavalue):
+        self.dataval=datavalue
+        self.nextval=None
+
+class Singly_ll:
+    def __init__(self):
+        self.headval=None
+
+    def print_val(self):
+        start_val=self.headval
+        while start_val is not None:
+            print(start_val.dataval)
+            start_val=start_val.nextval
+
+    def bubble_sort(self):
+
+         start_val = self.headval
+         second_val=self.headval.nextval
+         while start_val is not None :
+           while second_val is not None :
+                  if(start_val.dataval>second_val.dataval):
+                    start_val.dataval,second_val.dataval=second_val.dataval,start_val.dataval
+                    start_val=start_val.nextval
+                    second_val=second_val.nextval
+                 
+           break
+
+
+list1=Singly_ll()
+list1.headval=Node(8)
+second=Node(0)
+third=Node(3)
+fourth=Node(1)
+fifth=Node(5)
+list1.headval.nextval=second
+second.nextval=third
+third.nextval=fourth
+fourth.nextval=fifth
+list1.print_val()
+print()
+list1.bubble_sort()
+print()
+list1.print_val()
